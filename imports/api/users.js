@@ -14,4 +14,6 @@ export const validateUserFn = (user) => {
 
   return true;
 }
-Accounts.validateNewUser(validateUserFn);
+if (Meteor.isServer) {
+  Accounts.validateNewUser(validateUserFn);
+}
